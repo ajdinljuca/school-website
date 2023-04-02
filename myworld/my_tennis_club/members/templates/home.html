@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% block head %}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,17 +9,13 @@
     <link rel="stylesheet" 
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <title>Test</title>
-    {% endblock %}
 </head>
 <body>
     <header class="header">
-        {% block header %}
         <img class="logo unselectable" src="{% static 'img/tehnicka.png' %}" alt="logo">
-        {% endblock %}
     </header>¸
-   
+    <img class="background unselectable" src="{% static 'img/skola.png' %}" alt="škola">
     <div class="navigation-bar">
-        {% block content %}
     <div class="navigation">
         <a href="/Sekcije"><div class="navitem unselectable"><i class="fa-solid fa-palette fa-lg" style="color: #1e1d20;"></i>Sekcije</div></a>
         <a href="/Vijesti"><div class="navitem unselectable"><i class="fa-solid fa-bullhorn fa-lg" style="color: #1f1d20;"></i>Vijesti</div></a>
@@ -31,15 +26,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
         <a href="/Kontakt"><div class="navitem unselectable"><i class="fa-solid fa-at fa-lg" style="color: #1f1d20;"></i>Kontakt</div></a>
 
     </div>
-
-    
-    {% endblock %}
 </div>
-
-
-
 <div class="info">
-    {% block div %}
     <div class="text">
       <div class="text-content">
       <h1>Zašto birate nas?</h1>
@@ -55,12 +43,46 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
       <img class="spongbob" src="{% static 'img/spong.jpg' %}" alt="">
     </div>
     
-    {% endblock %}
+
   </div>
+  <div class="info">
+    <div class="image">
+      <img class="spongbob" src="{% static 'img/spong.jpg' %}" alt="">
+    </div>
+    <div class="text">
+      <div class="text-content">
+      <h1>Zašto birate nas?</h1>
+      <p>Biranjem tehničke osiguravate se za opciju sa visokom potražnjom na današnjem tržištu
+      ,koja se očekuje da će rasti još više u budućnosti, što znači finanfijsku stabilnost.Smijerovi mogu nuditi
+      intelektualni izazov za zainteresovane i prijateljsko okruženje za prosječnog učenika.
+      Uz široku lepezu naučenih znanja postoji prostor za izražavanje kreativnosti
+      pojedinca kroz izgradnju niza projekata na praktičnoj nastavi.Konačno,tehničke nauke su stub
+      zajednice,tako da će okolina uvažavati vaše znanje.</p>
+    </div>
+    </div>
+   
+    
 
+  </div>
+  <div class="info">
+    <div class="text">
+      <div class="text-content">
+      <h1>Zašto birate nas?</h1>
+      <p>Biranjem tehničke osiguravate se za opciju sa visokom potražnjom na današnjem tržištu
+      ,koja se očekuje da će rasti još više u budućnosti, što znači finanfijsku stabilnost.Smijerovi mogu nuditi
+      intelektualni izazov za zainteresovane i prijateljsko okruženje za prosječnog učenika.
+      Uz široku lepezu naučenih znanja postoji prostor za izražavanje kreativnosti
+      pojedinca kroz izgradnju niza projekata na praktičnoj nastavi.Konačno,tehničke nauke su stub
+      zajednice,tako da će okolina uvažavati vaše znanje.</p>
+    </div>
+    </div>
+    <div class="image">
+      <img class="spongbob" src="{% static 'img/spong.jpg' %}" alt="">
+    </div>
+    
 
+  </div>
   <footer class="kontaktirajnas">
-    {% block footer %}
     <div class="contactsection">
     <a href="#" class="contactbutton">Kontaktiraj nas</a>
   </div>
@@ -73,7 +95,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
       <a href="https://www.tiktok.com/@informacionodrustvo"  target="_blank" class="socialicon"><i class="fa-brands fa-tiktok fa-lg" style="color: #1e1d20;"></i></a>
     </div>
   </div>
-  {% endblock %}
+
   </footer> 
 </body>
 </html>
