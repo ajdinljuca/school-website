@@ -2,4 +2,16 @@
 
 {% block title %}Home - My Site{% endblock %}
 
-{% block div %} Ovde ide kontent smjerova {% endblock %}
+{% block div %} 
+
+    <h1>Smjerovi</h1>
+    {% for article in articles %}
+        <div class="article">
+            <h2>{{ article.title }}</h2>
+            <p>{{ article.body }}</p>
+            <p>Published on: {{ article.published_date }}</p>
+            <img src="{{ article.image.url }}" alt="{{ article.title }}">
+        </div>
+    {% endfor %}
+
+{% endblock %}
