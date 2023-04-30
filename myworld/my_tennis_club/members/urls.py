@@ -2,9 +2,6 @@ from django.urls import path
 from . import views
 from django.urls import path
 
-
-smjerovi = ["mehatronika", "mašinstvo", "tekstilstvo"]
-
 urlpatterns = [
     path('members/', views.members, name='members'),
     path('', views.home, name='home'),  
@@ -12,7 +9,12 @@ urlpatterns = [
     path('Vijesti/', views.vijesti, name='vijesti'),
     path('Upis/', views.upis, name='upis'),
     path('Prostor/', views.prostor, name='prostor'),
-    path('smjerovi/<slug:slug>', views.smjerovi, name='smjerovi'),
+    # path('smjerovi/<slug:slug>', views.smijer, name='smijer'),
     path('Događaji/', views.događaji, name='događaji'),
     path('Kontakt/', views.kontakt, name='kontakt'),
+
+# This might produce some unwanted bugs:
+    path('Struke/', views.struke, name='struke'),
+    path('smjerovi/<slug:struka_slug>/<slug:smijer_slug>/', views.struka_smijer_view, name='struka-smijer'),
+
 ]

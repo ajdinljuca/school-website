@@ -1,0 +1,18 @@
+<h1>{{ branch.name }}</h1>
+
+{% if professions %}
+  <form method="GET">
+    <label for="biranje-smijera">Izaberi smijer:</label>
+    <select id="biranje-smijera" name="smijer_slug">
+      <option value="">-- Izaberi smijer --</option>
+      {% for smijer in smjerovi %}
+        <option value="{{ smijer.slug }}" {% if izabrani-smijer == smijer %}selected{% endif %}>
+          {{ smijer.name }}
+        </option>
+      {% endfor %}
+    </select>
+    <button type="submit">Go</button>
+  </form>
+{% else %}
+  <p>Nema smjerova u ovoj struci.</p>
+{% endif %}
