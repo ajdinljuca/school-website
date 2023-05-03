@@ -1,148 +1,55 @@
+{% extends "main.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-    />
-    <title>Kontakt</title>
-  </head>
-  <body>
-    <header class="header">
-      <img class="logodark" src="img/cringlogo.png" alt="" />
-      <p class="paratehnicka">TEHNIČKA</p>
-      <p class="parabrcko">BRČKO</p>
-    </header>
-    <div class="navigation-barnews" id="navbar">
-      <div class="navigation">
-        <a href="#"
-          ><div class="navitem unselectable">
-            <i class="fa-solid fa-palette fa-lg" style="color: #1e1d20"></i
-            >Sekcije
-          </div></a
-        >
-        <a href="#"
-          ><div class="navitem unselectable">
-            <i class="fa-solid fa-bullhorn fa-lg" style="color: #1f1d20"></i
-            >Vijesti
-          </div></a
-        >
-        <a href="#"
-          ><div class="navitem unselectable">
-            <i class="fa-solid fa-pencil fa-lg" style="color: #1f1d20"></i>Upis
-          </div></a
-        >
-        <a href="#"
-          ><div class="navitem unselectable">
-            <i class="fa-solid fa-school fa-lg" style="color: #1f1d20"></i
-            >Prostor
-          </div></a
-        >
-        <a href="#"
-          ><div class="navitem unselectable">
-            <i
-              class="fa-solid fa-graduation-cap fa-lg"
-              style="color: #1f1d20"
-            ></i
-            >Smjerovi
-          </div></a
-        >
-        <a href="#"
-          ><div class="navitem unselectable">
-            <i
-              class="fa-solid fa-calendar-days fa-lg"
-              style="color: #1f1d20"
-            ></i
-            >Događaji
-          </div></a
-        >
-        <a href="#"
-          ><div class="navitem unselectable">
-            <i class="fa-solid fa-at fa-lg" style="color: #1f1d20"></i>Kontakt
-          </div></a
-        >
-      </div>
-    </div>
-    <h1 class="contacttitle">Kontaktirajte nas</h1>
-    <div class="contactitemscontainer">
-      <div class="contactitems">
-        <div class="contactitem">
-          <i
-            class="fa-solid fa-location-dot fa-10x contact-icon"
-            style="color: white"
-          ></i>
-          <p>Musala 44, 76100 Brčko</p>
-        </div>
-        <div class="contactitem">
-          <i
-            class="fa-solid fa-phone fa-10x contact-icon"
-            style="color: white"
-          ></i>
-          <p>049-217-052</p>
-        </div>
-        <div class="contactitem">
-          <i class="fa-solid fa-envelope fa-10x" style="color: white"></i>
-          <p>tehnickaskolabrcko@gmail.com</p>
-        </div>
-      </div>
-    </div>
-    <div class="logo-decoration">
-      <div class="line"></div>
-      <img src="img/tehnicka-logo.png" alt="" />
-      <div class="line"></div>
-    </div>
-    <h1 class="socialmediatext">
-      Uključite se i na društvenim <br />
-      mrežama
-    </h1>
-    <div class="socialmediashowcase">
-      <div class="socialmediashowcaseholder">
-        <div class="socialmediaicontiktok">
-          <i class="fa-brands fa-tiktok fa-10x iconcolor"></i>
-        </div>
-        <div class="socialmediaiconfacebook">
-          <i class="fa-brands fa-facebook-f fa-10x iconcolor"></i>
-        </div>
-        <div class="socialmediaiconinstagram">
-          <i class="fa-brands fa-instagram fa-10x iconcolor"></i>
-        </div>
-        <div class="socialmediaiconnone"></div>
-      </div>
-    </div>
 
-    <footer class="kontaktirajnas">
-      <div class="contactsection">
-        <a href="#" class="contactbutton">Kontaktiraj nas</a>
-      </div>
-      <div class="copyright-social">
-        <p class="copyrighttext">&copy;Almin Brodlić & Ajdin Ljuca Ltd.</p>
-        <img class="footerlogo" src="img/cringlogo.png" alt="logo" />
-        <div class="social">
-          <a
-            class="socialicon"
-            target="_blank"
-            href="https://www.facebook.com/TehnickaBrcko"
-            ><i class="fa-brands fa-facebook-f fa-lg" style="color: #1e1d20"></i
-          ></a>
-          <a
-            href="https://www.instagram.com/tehnickaskolabrcko"
-            target="_blank"
-            class="socialicon"
-            ><i class="fa-brands fa-instagram fa-lg" style="color: #1e1d20"></i
-          ></a>
-          <a
-            href="https://www.tiktok.com/@informacionodrustvo"
-            target="_blank"
-            class="socialicon"
-            ><i class="fa-brands fa-tiktok fa-lg" style="color: #1e1d20"></i
-          ></a>
-        </div>
-      </div>
-    </footer>
-  </body>
-</html>
+{% block title %}
+Kontakt - JU Tehnička Škola Brčko distrikt BiH
+{% endblock %}
+
+{% block content %}
+<h1 class="contacttitle">Kontaktirajte nas</h1>
+<div class="contactitemscontainer">
+  <div class="contactitems">
+    <div class="contactitem">
+      <i
+        class="fa-solid fa-location-dot fa-10x contact-icon"
+        style="color: white"
+      ></i>
+      <p>Musala 44, 76100 Brčko</p>
+    </div>
+    <div class="contactitem">
+      <i
+        class="fa-solid fa-phone fa-10x contact-icon"
+        style="color: white"
+      ></i>
+      <p>049-217-052</p>
+    </div>
+    <div class="contactitem">
+      <i class="fa-solid fa-envelope fa-10x" style="color: white"></i>
+      <p>tehnickaskolabrcko@gmail.com</p>
+    </div>
+  </div>
+</div>
+<div class="logo-decoration">
+  <div class="line"></div>
+  <img src="img/tehnicka-logo.png" alt="" />
+  <div class="line"></div>
+</div>
+<h1 class="socialmediatext">
+  Uključite se i na društvenim <br />
+  mrežama
+</h1>
+<div class="socialmediashowcase">
+  <div class="socialmediashowcaseholder">
+    <div class="socialmediaicontiktok">
+      <i class="fa-brands fa-tiktok fa-10x iconcolor"></i>
+    </div>
+    <div class="socialmediaiconfacebook">
+      <i class="fa-brands fa-facebook-f fa-10x iconcolor"></i>
+    </div>
+    <div class="socialmediaiconinstagram">
+      <i class="fa-brands fa-instagram fa-10x iconcolor"></i>
+    </div>
+    <div class="socialmediaiconnone"></div>
+  </div>
+</div>
+{% endblock %}

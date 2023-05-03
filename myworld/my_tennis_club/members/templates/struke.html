@@ -1,169 +1,68 @@
+{% extends "main.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-    />
-    <title>Smjerovi</title>
-  </head>
-  <body>
-    <header class="header">
-      <img class="logodark" src="img/cringlogo.png" alt="" />
-      <p class="paratehnicka">TEHNIČKA</p>
-      <p class="parabrcko">BRČKO</p>
-    </header>
-    <div class="navigation-barnews" id="navbar">
-      <div class="navigation">
-        <a href="#"
-          ><div class="navitem unselectable">
-            <i class="fa-solid fa-palette fa-lg" style="color: #1e1d20"></i
-            >Sekcije
-          </div></a
-        >
-        <a href="#"
-          ><div class="navitem unselectable">
-            <i class="fa-solid fa-bullhorn fa-lg" style="color: #1f1d20"></i
-            >Vijesti
-          </div></a
-        >
-        <a href="#"
-          ><div class="navitem unselectable">
-            <i class="fa-solid fa-pencil fa-lg" style="color: #1f1d20"></i>Upis
-          </div></a
-        >
-        <a href="#"
-          ><div class="navitem unselectable">
-            <i class="fa-solid fa-school fa-lg" style="color: #1f1d20"></i
-            >Prostor
-          </div></a
-        >
-        <a href="#"
-          ><div class="navitem unselectable">
-            <i
-              class="fa-solid fa-graduation-cap fa-lg"
-              style="color: #1f1d20"
-            ></i
-            >Smjerovi
-          </div></a
-        >
-        <a href="#"
-          ><div class="navitem unselectable">
-            <i
-              class="fa-solid fa-calendar-days fa-lg"
-              style="color: #1f1d20"
-            ></i
-            >Događaji
-          </div></a
-        >
-        <a href="#"
-          ><div class="navitem unselectable">
-            <i class="fa-solid fa-at fa-lg" style="color: #1f1d20"></i>Kontakt
-          </div></a
-        >
-      </div>
-    </div>
 
-    <!--This is unique to "struke" page-->
-    <div class="choosetext">
-      <h1>
-        Izaberite smijer o kojem <br />
-        želite saznati više
-      </h1>
-    </div>
+{% block title %}
+Prostor - JU Tehnička Škola Brčko distrikt BiH
+{% endblock %}
 
-    <a href="/#">
-    <div class="display">
-      <div class="display-img">
-        <img src="{% static 'img/saobracaj.png' %}" alt="" />
-        <p>Saobraćaj</p>
-      </div>
-    </a>
+{% block content %}
+
+<div class="choosetext">
+  <h1>
+    Izaberite smijer o kojem <br />
+    želite saznati više
+  </h1>
+</div>
+
+<a href="/#">
+<div class="display">
+  <div class="display-img">
+    <img src="{% static 'img/saobracaj.png' %}" alt="" />
+    <p>Saobraćaj</p>
+  </div>
+</a>
 
 
-    <a href="/#">
-      <div class="display-img">
-        <img src="{% static 'img/tekstilni.png' %}" alt="" />
-        <p>
-          Tekstilstvo i <br />
-          Kožarstvo
-        </p>
-      </div>
-    </a>
+<a href="/#">
+  <div class="display-img">
+    <img src="{% static 'img/tekstilni.png' %}" alt="" />
+    <p>
+      Tekstilstvo i <br />
+      Kožarstvo
+    </p>
+  </div>
+</a>
 
 
-    <a href="/#">
-        <div class="display-img">
-        <img src="{% static 'img/geodezija.png' %}" alt="" />
-        <p>
-          Geodezija i <br />
-          Građevinarstvo
-        </p>
-      </div>
-    </a>
+<a href="/#">
+    <div class="display-img">
+    <img src="{% static 'img/geodezija.png' %}" alt="" />
+    <p>
+      Geodezija i <br />
+      Građevinarstvo
+    </p>
+  </div>
+</a>
 
 
 
-    <a href="/#">
-      <div class="display-img">
-        <img src="{% static 'img/Elektro.png' %}" alt="" />
-        <p>Elektrotehnika</p>
-      </div>
-    </a>
+<a href="/#">
+  <div class="display-img">
+    <img src="{% static 'img/Elektro.png' %}" alt="" />
+    <p>Elektrotehnika</p>
+  </div>
+</a>
 
 
-    <a href="/#">
-      <div class="display-img">
-        <img src="{% static 'img/masinstvo_.png' %}" alt="" />
-        <p>
-          Mašinstvo i <br />
-          Obrada Metala
-        </p>
-      </div>
-    </div>
-  </a>
+<a href="/#">
+  <div class="display-img">
+    <img src="{% static 'img/masinstvo_.png' %}" alt="" />
+    <p>
+      Mašinstvo i <br />
+      Obrada Metala
+    </p>
+  </div>
+</div>
+</a>
 
-    <!--This is unique to "struke" page-->
-
-    <div class="logo-decoration">
-      <div class="line"></div>
-      <img src="{% static 'img/tehnicka-logo.png' %}" alt="" />
-      <div class="line"></div>
-    </div>
-
-    <footer class="kontaktirajnas">
-      <div class="contactsection">
-        <a href="#" class="contactbutton">Kontaktiraj nas</a>
-      </div>
-      <div class="copyright-social">
-        <p class="copyrighttext">&copy;Almin Brodlić & Ajdin Ljuca Ltd.</p>
-        <img class="footerlogo" src="{% static 'img/tehnicka.png' %}" alt="logo" />
-        <div class="social">
-          <a
-            class="socialicon"
-            target="_blank"
-            href="https://www.facebook.com/TehnickaBrcko"
-            ><i class="fa-brands fa-facebook-f fa-lg" style="color: #1e1d20"></i
-          ></a>
-          <a
-            href="https://www.instagram.com/tehnickaskolabrcko"
-            target="_blank"
-            class="socialicon"
-            ><i class="fa-brands fa-instagram fa-lg" style="color: #1e1d20"></i
-          ></a>
-          <a
-            href="https://www.tiktok.com/@informacionodrustvo"
-            target="_blank"
-            class="socialicon"
-            ><i class="fa-brands fa-tiktok fa-lg" style="color: #1e1d20"></i
-          ></a>
-        </div>
-      </div>
-    </footer>
-  </body>
-</html>
+{% endblock %}

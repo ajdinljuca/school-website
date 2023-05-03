@@ -1,18 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends "main.html" %}
+{% load static %}
 
-<h1 style='color:red'> Caution! Almin wasn't here! <h2>
-<p1>If you are seeing this, it means that the page has loaded correctly but 
-    Almin just hasn't finished working on <strong>upis.html</strong> yet </p1>
+{% block title %}
+Prostor - JU Tehnička Škola Brčko distrikt BiH
+{% endblock %}
 
-</body>
-</html>
+{% block content %}
 
-
+<div class="info">
+    <div class="text">
+      <div class="text-content">
+      <h1>Caution! Almin wasn't here!</h1>
+      <p>If you are seeing this, it means that the page has loaded correctly but 
+        Almin just hasn't finished working on <strong>upis.html</strong> yet. </p>
+    </div>
+    </div>
+    <div class="image">
+      <img class="spongbob" src="{% static 'img/spong.jpg' %}" alt="">
+    </div>
+  </div>
+{% endblock %}

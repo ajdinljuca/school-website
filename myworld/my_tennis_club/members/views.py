@@ -26,6 +26,13 @@ def prostor(request):
   template = loader.get_template('prostor.html')
   return HttpResponse(template.render())
 
+def događaji(request):
+  template = loader.get_template('događaji.html')
+  return HttpResponse(template.render())
+
+def sekcije(request):
+  template = loader.get_template('sekcije.html')
+  return HttpResponse(template.render())
 
 """
 def smijer(request, slug):
@@ -53,11 +60,6 @@ def vijesti(request, slug):
   return HttpResponse(template.render(context, request))
   #"Articles" context part was unchanged after copy paste of earlier view
 
-def događaji(request, slug):
-  articles = Article.objects.all()
-  template = loader.get_template('news.html',)
-  context = {'articles': articles}
-  #The html for events tab is missing so news html was implemented instead
 
 
 # This might produce some unwanted bugs:

@@ -21,6 +21,12 @@ body {
   color: white;
 }
 
+iframe {
+  width: 200%;
+  height: 200%;
+}
+
+
 .school-img {
   position: absolute;
   top: 0;
