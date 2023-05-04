@@ -44,5 +44,6 @@ class Smijer(models.Model):
       return self.name
 
 class Vijesti(models.Model):
-  name = models.CharField(max_length=255)
-  test = models.CharField(max_length=255)
+  name = models.CharField(max_length=200)
+  test = models.TextField()
+  objavljen = models.DateTimeField(auto_now_add=True)

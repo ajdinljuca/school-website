@@ -6,84 +6,68 @@ Vijesti - JU Tehnička Škola Brčko distrikt BiH
 {% endblock %}
 
 {% block content %}
-<!--
-    <div class="page">
-      <div class="mainnewsimg">
-        <div class="mainnewsimginfo">
-          <p class="mainnewsimgtitle">Lorem ipsum dolor sit amet.</p>
-          <p class="mainnewsimgbio">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta,
-            eius.
-          </p>
-          <p class="mainnewsimgdate">Mar 30,2023</p>
-          <a class="mainnewsimgread" href="">Čitaj</a>
-        </div>
-      </div>
-<br>
-      <div class="articles">
-        <div class="articleitem">
-          <img class="articleitemimg" src="" alt="" />
-          <p class="articleitemtitle">Lorem ipsum dolor sit amet.</p>
-          <p class="articleitembio">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt,
-            expedita!
-          </p>
-          <p class="articleitemdate">Apr 26, 2023</p>
-          <p class="articleitemread">Čitaj</p>
-        </div>
-      </div>
 
-      <div class="newsnavigation">
-        <button class="newsnavbutton">&lt;</button>
-        <div class="newsnavdots">· · · · ·</div>
+<!--Najnovija vijest-->
+<div class="page">
+  <div class="mainnewsimg">
+    <div class="mainnewsimginfo">
+      <p class="mainnewsimgtitle">{{ najnovija_vijest.name }}</p>
+      <p class="mainnewsimgbio">
+      {{ najnovija_vijest.test }}
+      </p>
+      <p class="mainnewsimgdate">{{ x.objavljen }}</p>
+      <a class="mainnewsimgread" href="">Čitaj</a>
+    </div>
+  </div>
 
-        <button class="newsnavbutton">&gt;</button>
+<!--Nove vijesti-->
+{% for x in nove_vijesti %}
+<li><a href="details/{{ x.id }}">
+
+  <div class="articles">
+    <div class="articleitem">
+      <img class="articleitemimg" src="" alt="" />
+      <p class="articleitemtitle">  {{ x.name }}</p>
+      <p class="articleitembio">
+        {{ x.test }}
+      </p>
+      <p class="articleitemdate">{{ x.objavljen }}</p>
+      <p class="articleitemread">Čitaj</p>
+    </div>
+  </div>
+
+</a></li>
+{% endfor %}
+
+
+
+<!--Za šaltanje-->
+  <div class="newsnavigation">
+    <button class="newsnavbutton">&lt;</button>
+    <div class="newsnavdots">· · · · ·</div>
+    <button class="newsnavbutton">&gt;</button>
+  </div>
+</div>
+
+<!--Stare vijesti-->
+{% for x in stare_vijesti %}
+<li><a href="details/{{ x.id }}">
+
+  <div class="newsarticles">
+    <div class="newsarticleitems">
+      <img class="newsarticleitemimg" src="" alt="" />
+      <div class="newsarticleinfo">
+        <p class="newsarticletitle">{{ x.name }}</p>
+        <p class="newsarticledate">{{ x.objavljen }}</p>
+        <p class="newsarticletype"></p>
       </div>
     </div>
+  </div>  
 
--->
-<!--Newly Added
-<ul>
-  {% for x in Vijesti %}
-    <li><a href="članak/{{ x.id }}">
+</a></li>
+{% endfor %}
 
-      <div class="newsarticles">
-        <div class="newsarticleitems">
-          <img class="newsarticleitemimg" src="" alt="" />
-          <div class="newsarticleinfo">
-            <p class="newsarticletitle">{{ x.name }}</p>
-            <p class="newsarticledate">Apr 16,2023</p>
-            <p class="newsarticletype"></p>
-          </div>
-        </div>
-      </div>
+<!--More dugme-->
+<button class="newsarticlemorebtn">More</button>
 
-  
-    </a></li>
-  {% endfor %}
-</ul>
--->
-
-
-<ul>
-  {% for x in vijesti %}
-    <li><a href="details/{{ x.id }}">
-      
-      <div class="newsarticles">
-        <div class="newsarticleitems">
-          <img class="newsarticleitemimg" src="" alt="" />
-          <div class="newsarticleinfo">
-            <p class="newsarticletitle">{{ x.name }}</p>
-            <p class="newsarticledate">Apr 16,2023</p>
-            <p class="newsarticletype"></p>
-          </div>
-        </div>
-      </div>
-    </a></li>
-  {% endfor %}
-</ul>
-
-<!--
-    <button class="newsarticlemorebtn">More</button>
-  -->
 {% endblock %}

@@ -78,12 +78,36 @@ def struka_smijer_view(request, struka_slug, smijer_slug):
 
 
 def vijesti(request):
-  vijesti = Vijesti.objects.all().values()
+  najnovija_vijest = Vijesti.objects.latest('objavljen')
+  nove_vijesti = Vijesti.objects.order_by('-objavljen')[1:7]
+  stare_vijesti = Vijesti.objects.order_by('-objavljen')[7:]
+  #Worked right : vijesti = Vijesti.objects.all().order_by('-id')
   template = loader.get_template('vijesti.html')
   context = {
-    'vijesti': vijesti,
+   #Worked right : 'vijesti': vijesti,
+
+  'najnovija_vijest': najnovija_vijest,
+  'nove_vijesti': nove_vijesti,
+  'stare_vijesti': stare_vijesti,
+ 
   }
   return HttpResponse(template.render(context, request))
+
+
+def article_list(request):
+
+
+    context = {
+        'latest_article': latest_article,
+        'latest_six_articles': latest_six_articles,
+        'archive_articles': archive_articles,
+    }
+
+    return render(request, 'article_list.html', context)
+
+
+
+
   
 def članak(request, id):
   članak = Vijesti.objects.get(id=id)
