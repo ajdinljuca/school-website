@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.template import loader
 from django.views import View
 from .models import Article
+from .models import Vijesti
 # Untested imports:
 from django.shortcuts import get_object_or_404, render
 from .models import Struka, Smijer
@@ -45,7 +46,7 @@ def smijer(request, slug):
 def struke(request):
   template = loader.get_template('struke.html')
   return HttpResponse(template.render())
-
+"""
 def vijesti(request, slug):
   articles = Article.objects.all()
   template = loader.get_template('news2.html',)
@@ -59,7 +60,7 @@ def vijesti(request, slug):
   context = {'articles': articles}
   return HttpResponse(template.render(context, request))
   #"Articles" context part was unchanged after copy paste of earlier view
-
+"""
 
 
 # This might produce some unwanted bugs:
@@ -74,3 +75,20 @@ def struka_smijer_view(request, struka_slug, smijer_slug):
         'smjerovi': smjerovi,
         'izabrani_smijer': get_object_or_404(smjerovi, slug=smijer_slug) if smijer_slug else None
     })
+
+
+def vijesti(request):
+  vijesti = Vijesti.objects.all().values()
+  template = loader.get_template('vijesti.html')
+  context = {
+    'vijesti': vijesti,
+  }
+  return HttpResponse(template.render(context, request))
+  
+def članak(request, id):
+  članak = Vijesti.objects.get(id=id)
+  template = loader.get_template('članak.html')
+  context = {
+    'članak': članak,
+  }
+  return HttpResponse(template.render(context, request))

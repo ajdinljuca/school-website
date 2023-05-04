@@ -42,3 +42,7 @@ class Smijer(models.Model):
 
     def __str__(self):
       return self.name
+
+class Vijesti(models.Model):
+  name = models.CharField(max_length=255)
+  test = models.CharField(max_length=255)

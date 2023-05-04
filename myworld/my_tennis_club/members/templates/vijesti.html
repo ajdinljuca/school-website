@@ -1,73 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-    />
-    <title>Kontakt</title>
-  </head>
-  <body>
-    <header class="header">
-      <img class="logodark" src="img/cringlogo.png" alt="" />
-      <p class="paratehnicka">TEHNIČKA</p>
-      <p class="parabrcko">BRČKO</p>
-    </header>
-    <div class="navigation-barnews" id="navbar">
-      <div class="navigation">
-        <a href="#"
-          ><div class="navitem unselectable">
-            <i class="fa-solid fa-palette fa-lg" style="color: #1e1d20"></i
-            >Sekcije
-          </div></a
-        >
-        <a href="#"
-          ><div class="navitem unselectable">
-            <i class="fa-solid fa-bullhorn fa-lg" style="color: #1f1d20"></i
-            >Vijesti
-          </div></a
-        >
-        <a href="#"
-          ><div class="navitem unselectable">
-            <i class="fa-solid fa-pencil fa-lg" style="color: #1f1d20"></i>Upis
-          </div></a
-        >
-        <a href="#"
-          ><div class="navitem unselectable">
-            <i class="fa-solid fa-school fa-lg" style="color: #1f1d20"></i
-            >Prostor
-          </div></a
-        >
-        <a href="#"
-          ><div class="navitem unselectable">
-            <i
-              class="fa-solid fa-graduation-cap fa-lg"
-              style="color: #1f1d20"
-            ></i
-            >Smjerovi
-          </div></a
-        >
-        <a href="#"
-          ><div class="navitem unselectable">
-            <i
-              class="fa-solid fa-calendar-days fa-lg"
-              style="color: #1f1d20"
-            ></i
-            >Događaji
-          </div></a
-        >
-        <a href="#"
-          ><div class="navitem unselectable">
-            <i class="fa-solid fa-at fa-lg" style="color: #1f1d20"></i>Kontakt
-          </div></a
-        >
-      </div>
-    </div>
+{% extends "main.html" %}
+{% load static %}
 
+{% block title %}
+Vijesti - JU Tehnička Škola Brčko distrikt BiH
+{% endblock %}
+
+{% block content %}
+<!--
     <div class="page">
       <div class="mainnewsimg">
         <div class="mainnewsimginfo">
@@ -80,33 +19,7 @@
           <a class="mainnewsimgread" href="">Čitaj</a>
         </div>
       </div>
-
-      <div class="articles">
-        <div class="articleitem">
-          <img class="articleitemimg" src="" alt="" />
-          <p class="articleitemtitle">Lorem ipsum dolor sit amet.</p>
-          <p class="articleitembio">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt,
-            expedita!
-          </p>
-          <p class="articleitemdate">Apr 26, 2023</p>
-          <p class="articleitemread">Čitaj</p>
-        </div>
-      </div>
-
-      <div class="articles">
-        <div class="articleitem">
-          <img class="articleitemimg" src="" alt="" />
-          <p class="articleitemtitle">Lorem ipsum dolor sit amet.</p>
-          <p class="articleitembio">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt,
-            expedita!
-          </p>
-          <p class="articleitemdate">Apr 26, 2023</p>
-          <p class="articleitemread">Čitaj</p>
-        </div>
-      </div>
-
+<br>
       <div class="articles">
         <div class="articleitem">
           <img class="articleitemimg" src="" alt="" />
@@ -128,47 +41,49 @@
       </div>
     </div>
 
-    <div class="newsarticles">
-      <div class="newsarticleitems">
-        <img class="newsarticleitemimg" src="" alt="" />
-        <div class="newsarticleinfo">
-          <p class="newsarticletitle">Lorem ipsum dolor sit amet.</p>
-          <p class="newsarticledate">Apr 16,2023</p>
-          <p class="newsarticletype"></p>
+-->
+<!--Newly Added
+<ul>
+  {% for x in Vijesti %}
+    <li><a href="članak/{{ x.id }}">
+
+      <div class="newsarticles">
+        <div class="newsarticleitems">
+          <img class="newsarticleitemimg" src="" alt="" />
+          <div class="newsarticleinfo">
+            <p class="newsarticletitle">{{ x.name }}</p>
+            <p class="newsarticledate">Apr 16,2023</p>
+            <p class="newsarticletype"></p>
+          </div>
         </div>
       </div>
-    </div>
 
+  
+    </a></li>
+  {% endfor %}
+</ul>
+-->
+
+
+<ul>
+  {% for x in vijesti %}
+    <li><a href="details/{{ x.id }}">
+      
+      <div class="newsarticles">
+        <div class="newsarticleitems">
+          <img class="newsarticleitemimg" src="" alt="" />
+          <div class="newsarticleinfo">
+            <p class="newsarticletitle">{{ x.name }}</p>
+            <p class="newsarticledate">Apr 16,2023</p>
+            <p class="newsarticletype"></p>
+          </div>
+        </div>
+      </div>
+    </a></li>
+  {% endfor %}
+</ul>
+
+<!--
     <button class="newsarticlemorebtn">More</button>
-
-    <footer class="kontaktirajnas">
-      <div class="contactsection">
-        <a href="#" class="contactbutton">Kontaktiraj nas</a>
-      </div>
-      <div class="copyright-social">
-        <p class="copyrighttext">&copy;Almin Brodlić & Ajdin Ljuca Ltd.</p>
-        <img class="footerlogo" src="img/cringlogo.png" alt="logo" />
-        <div class="social">
-          <a
-            class="socialicon"
-            target="_blank"
-            href="https://www.facebook.com/TehnickaBrcko"
-            ><i class="fa-brands fa-facebook-f fa-lg" style="color: #1e1d20"></i
-          ></a>
-          <a
-            href="https://www.instagram.com/tehnickaskolabrcko"
-            target="_blank"
-            class="socialicon"
-            ><i class="fa-brands fa-instagram fa-lg" style="color: #1e1d20"></i
-          ></a>
-          <a
-            href="https://www.tiktok.com/@informacionodrustvo"
-            target="_blank"
-            class="socialicon"
-            ><i class="fa-brands fa-tiktok fa-lg" style="color: #1e1d20"></i
-          ></a>
-        </div>
-      </div>
-    </footer>
-  </body>
-</html>
+  -->
+{% endblock %}

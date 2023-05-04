@@ -7,12 +7,13 @@ urlpatterns = [
     path('', views.home, name='home'),  
     path('members/', views.members, name='members'),
     path('Vijesti/', views.vijesti, name='vijesti'),
+    path('Članak/<int:id>', views.članak, name='članak'),
     path('Upis/', views.upis, name='upis'),
     path('Prostor/', views.prostor, name='prostor'),
     # path('smjerovi/<slug:slug>', views.smijer, name='smijer'),
     path('Događaji/', views.događaji, name='događaji'),
     path('Kontakt/', views.kontakt, name='kontakt'),
-    path('Sekcije', views.sekcije, name='sekcije'),
+    path('Sekcije/', views.sekcije, name='sekcije'),
 
 # This might produce some unwanted bugs:
     path('Struke/', views.struke, name='struke'),
