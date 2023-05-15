@@ -46,21 +46,6 @@ def smijer(request, slug):
 def struke(request):
   template = loader.get_template('struke.html')
   return HttpResponse(template.render())
-"""
-def vijesti(request, slug):
-  articles = Article.objects.all()
-  template = loader.get_template('news2.html',)
-  context = {'articles': articles}
-  return HttpResponse(template.render(context, request))
-  #"Articles" context part was unchanged after copy paste of earlier view
-  
-def vijesti(request, slug):
-  articles = Article.objects.all()
-  template = loader.get_template('news2.html',)
-  context = {'articles': articles}
-  return HttpResponse(template.render(context, request))
-  #"Articles" context part was unchanged after copy paste of earlier view
-"""
 
 
 # This might produce some unwanted bugs:
@@ -94,25 +79,10 @@ def vijesti(request):
   return HttpResponse(template.render(context, request))
 
 
-def article_list(request):
-
-
-    context = {
-        'latest_article': latest_article,
-        'latest_six_articles': latest_six_articles,
-        'archive_articles': archive_articles,
-    }
-
-    return render(request, 'article_list.html', context)
-
-
-
-
-  
-def članak(request, id):
-  članak = Vijesti.objects.get(id=id)
-  template = loader.get_template('članak.html')
+def clanak(request, id):
+  clanak = Vijesti.objects.get(id=id)
+  template = loader.get_template('clanak.html')
   context = {
-    'članak': članak,
+    'clanak': clanak,
   }
-  return HttpResponse(template.render(context, request))
+  return HttpResponse(template.render(context, request))        

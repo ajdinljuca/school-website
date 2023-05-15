@@ -1,0 +1,30 @@
+{% extends "main.html" %}
+{% load static %}
+
+{% block title %}
+{{ clanak.name }}
+{% endblock %}
+
+{% block content %}
+
+<div class="newspage">
+      <div class="emptyspace"></div>
+      <div class="actualarticle">
+        <div class="actualarticlelogo">
+          <div class="articlelogoline"></div>
+          <img class="articlelogolineimg" src="{% static 'img/tehnicka-logo.png' %}" alt="">
+          <div class="articlelogoline"></div>
+        </div>
+        <h1 class="articletitle">{{ clanak.name }}</h1>
+        <div class="articledateholder">
+        <p class="articledate">{{ clanak.objavljen }}</p>
+      </div>
+      <div class="articleholder">
+      <img class="articleimg" src="{% static 'img/spong.jpg' %}" alt="">
+      <p class="articletext">{{ clanak.test }}</p>
+    </div>
+      </div>
+      <div class="emptyspace"></div>
+    </div>
+    
+    {% endblock %}

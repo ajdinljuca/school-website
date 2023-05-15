@@ -8,6 +8,7 @@ Vijesti - JU Tehnička Škola Brčko distrikt BiH
 {% block content %}
 
 <!--Najnovija vijest-->
+<a href="Clanak/{{ najnovija_vijest.id }}">
 <div class="page">
   <div class="mainnewsimg">
     <div class="mainnewsimginfo">
@@ -15,14 +16,15 @@ Vijesti - JU Tehnička Škola Brčko distrikt BiH
       <p class="mainnewsimgbio">
       {{ najnovija_vijest.test }}
       </p>
-      <p class="mainnewsimgdate">{{ x.objavljen }}</p>
-      <a class="mainnewsimgread" href="">Čitaj</a>
+      <p class="mainnewsimgdate">{{ najnovija_vijest.objavljen }}</p>
+      <a class="mainnewsimgread" href="Clanak/{{ najnovija_vijest.id }}">Čitaj</a>
     </div>
   </div>
+</a>
 
 <!--Nove vijesti-->
 {% for x in nove_vijesti %}
-<li><a href="details/{{ x.id }}">
+<li><a href="Clanak/{{ x.id }}">
 
   <div class="articles">
     <div class="articleitem">
@@ -51,7 +53,7 @@ Vijesti - JU Tehnička Škola Brčko distrikt BiH
 
 <!--Stare vijesti-->
 {% for x in stare_vijesti %}
-<li><a href="details/{{ x.id }}">
+<li><a href="Clanak/{{ x.id }}">
 
   <div class="newsarticles">
     <div class="newsarticleitems">
