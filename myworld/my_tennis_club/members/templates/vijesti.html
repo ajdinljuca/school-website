@@ -14,12 +14,13 @@ Tehnička Škola Brčko distrikt BiH {% endblock %} {% block content %}
         <p class="herotitle">{{ najnovija_vijest.name }}</p>
         <p class="herotext">{{ najnovija_vijest.test }}</p>
         <p class="herodate">{{ najnovija_vijest.objavljen }}</p>
-        <a class="heroread" href="Clanak/{{ najnovija_vijest.id }}">Čitaj</a>
+        <p class="heroread" >Čitaj</p>
       </div>
     </div>
   </a>
 
   <div class="item">Item 3</div>
+  <div class="item">Item 4</div>
 
   <!--Nove vijesti-->
   <div class="subhero">
@@ -39,8 +40,9 @@ Tehnička Škola Brčko distrikt BiH {% endblock %} {% block content %}
   {% endfor %}
   </div>
 
-  <div class="item">Item 5</div>
+
   <div class="item">Item 6</div>
+  <div class="item">Item 7</div>
 
   <!--Stare vijesti-->
   <div class="sub-subhero">
@@ -59,7 +61,7 @@ Tehnička Škola Brčko distrikt BiH {% endblock %} {% block content %}
     {% endfor %}
     </div>
 
-    <div class="item">Item 8</div>
+    
     <div class="item">Item 9</div>
 
     {% endblock %}
