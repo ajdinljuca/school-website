@@ -1,75 +1,67 @@
-{% extends "main.html" %}
-{% load static %}
+{% extends "main.html" %} {% load static %} {% block title %} Vijesti - JU
+Tehnička Škola Brčko distrikt BiH {% endblock %} {% block content %}
 
-{% block title %}
-Vijesti - JU Tehnička Škola Brčko distrikt BiH
-{% endblock %}
+<div class="container">
+  <!-- .item{Item $}*9 -->
+  <div class="item">Item 1</div>
 
-{% block content %}
-
-<!--Najnovija vijest-->
-<a href="Clanak/{{ najnovija_vijest.id }}">
-<div class="page">
-  <div class="mainnewsimg">
-    <div class="mainnewsimginfo">
-      <p class="mainnewsimgtitle">{{ najnovija_vijest.name }}</p>
-      <p class="mainnewsimgbio">
-      {{ najnovija_vijest.test }}
-      </p>
-      <p class="mainnewsimgdate">{{ najnovija_vijest.objavljen }}</p>
-      <a class="mainnewsimgread" href="Clanak/{{ najnovija_vijest.id }}">Čitaj</a>
-    </div>
-  </div>
-</a>
-
-<!--Nove vijesti-->
-{% for x in nove_vijesti %}
-<li><a href="Clanak/{{ x.id }}">
-
-  <div class="articles">
-    <div class="articleitem">
-      <img class="articleitemimg" src="" alt="" />
-      <p class="articleitemtitle">  {{ x.name }}</p>
-      <p class="articleitembio">
-        {{ x.test }}
-      </p>
-      <p class="articleitemdate">{{ x.objavljen }}</p>
-      <p class="articleitemread">Čitaj</p>
-    </div>
-  </div>
-
-</a></li>
-{% endfor %}
-
-
-
-<!--Za šaltanje-->
-  <div class="newsnavigation">
-    <button class="newsnavbutton">&lt;</button>
-    <div class="newsnavdots">· · · · ·</div>
-    <button class="newsnavbutton">&gt;</button>
-  </div>
-</div>
-
-<!--Stare vijesti-->
-{% for x in stare_vijesti %}
-<li><a href="Clanak/{{ x.id }}">
-
-  <div class="newsarticles">
-    <div class="newsarticleitems">
-      <img class="newsarticleitemimg" src="" alt="" />
-      <div class="newsarticleinfo">
-        <p class="newsarticletitle">{{ x.name }}</p>
-        <p class="newsarticledate">{{ x.objavljen }}</p>
-        <p class="newsarticletype"></p>
+  <!--Najnovija vijest-->
+  <a href="Clanak/{{ najnovija_vijest.id }}">
+    <div class="containerscontainer"></div>
+    <div class="hero">
+      <div class="hero-image"></div>
+      <div class="hero-container">
+        <p class="herotitle">{{ najnovija_vijest.name }}</p>
+        <p class="herotext">{{ najnovija_vijest.test }}</p>
+        <p class="herodate">{{ najnovija_vijest.objavljen }}</p>
+        <a class="heroread" href="Clanak/{{ najnovija_vijest.id }}">Čitaj</a>
       </div>
     </div>
-  </div>  
+  </a>
 
-</a></li>
-{% endfor %}
+  <div class="item">Item 3</div>
 
-<!--More dugme-->
-<button class="newsarticlemorebtn">More</button>
+  <!--Nove vijesti-->
+  <div class="subhero">
+  {% for x in nove_vijesti %}
+  <a href="Clanak/{{ x.id }}">
 
-{% endblock %}
+      <div class="subhero-master-container">
+        <div class="subhero-image"></div>
+        <div class="subhero-container">
+          <p class="subherotitle">{{ x.name }}</p>
+          <p class="subherotext">{{ x.test }}</p>
+          <p class="subherodate">{{ x.objavljen }}</p>
+          <a class="subheroread" href="Clanak/{{ x.id }}">Čitaj</a>
+        </div>
+      </div>
+  </a>
+  {% endfor %}
+  </div>
+
+  <div class="item">Item 5</div>
+  <div class="item">Item 6</div>
+
+  <!--Stare vijesti-->
+  <div class="sub-subhero">
+  {% for x in stare_vijesti %}
+    <a href="Clanak/{{ x.id }}">
+      <div class="sub-subhero-master-container">
+        <div class="sub-subhero-image"></div>
+        <div class="sub-subhero-container">
+          <p class="sub-subherotitle">{{ x.name }}</p>
+          <p class="sub-subherotext">{{ x.test }}</p>
+          <p class="sub-subherodate">{{ x.objavljen }}</p>
+          <a class="sub-subheroread" href="Clanak/{{ x.id }}">Čitaj</a>
+        </div>
+      </div>
+    </a>
+    {% endfor %}
+    </div>
+
+    <div class="item">Item 8</div>
+    <div class="item">Item 9</div>
+
+    {% endblock %}
+  </div>
+</div>

@@ -64,8 +64,8 @@ def struka_smijer_view(request, struka_slug, smijer_slug):
 
 def vijesti(request):
   najnovija_vijest = Vijesti.objects.latest('objavljen')
-  nove_vijesti = Vijesti.objects.order_by('-objavljen')[1:7]
-  stare_vijesti = Vijesti.objects.order_by('-objavljen')[7:]
+  nove_vijesti = Vijesti.objects.order_by('-objavljen')[1:4]
+  stare_vijesti = Vijesti.objects.order_by('-objavljen')[4:]
   #Worked right : vijesti = Vijesti.objects.all().order_by('-id')
   template = loader.get_template('vijesti.html')
   context = {
